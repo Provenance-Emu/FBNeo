@@ -90,7 +90,7 @@ INT32 is_netgame_or_recording();
 #else
 inline static INT32 is_netgame_or_recording()
 {
-	return kNetGame;
+    return false; //kNetGame;
 }
 #endif
 

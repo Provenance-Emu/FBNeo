@@ -24,6 +24,12 @@ int SetBurnHighCol(int nDepth);
 extern int nAppVirtualFps;
 extern bool bRunPause;
 extern bool bAlwaysProcessKeyboardInput;
+extern int bAltPause;
+extern int bAlwaysDrawFrames;
+//extern INT32 bRunAhead;  // in burn.h! (partially platform agnostic feature)
+extern int kNetGame;
+int RunIdle();
+
 TCHAR* ANSIToTCHAR(const char* pszInString, TCHAR* pszOutString, int nOutSize);
 char* TCHARToANSI(const TCHAR* pszInString, char* pszOutString, int nOutSize);
 #define _TtoA(a)	TCHARToANSI(a, NULL, 0)

@@ -419,7 +419,7 @@ void K054539Update(INT32 chip, INT16 *outputs, INT32 samples_len)
 
 	static const INT16 dpcm[16] = {
 		0<<8, 1<<8, 4<<8, 9<<8, 16<<8, 25<<8, 36<<8, 49<<8,
-		0, -49<<8, -36<<8, -25<<8, -16<<8, -9<<8, -4<<8, -1<<8 // make symmetrical -dink
+        0, static_cast<INT16>(-49<<8), static_cast<INT16>(-36<<8), static_cast<INT16>(-25<<8), static_cast<INT16>(-16<<8), static_cast<INT16>(-9<<8), static_cast<INT16>(-4<<8), static_cast<INT16>(-1<<8) // make symmetrical -dink
 		//-64<<8, -49<<8, -36<<8, -25<<8, -16<<8, -9<<8, -4<<8, -1<<8
 	};
 #if DELAY_DEBUG
