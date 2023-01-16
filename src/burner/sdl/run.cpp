@@ -6,7 +6,7 @@
 #include <sys/time.h>
 
 static unsigned int nDoFPS = 0;
-bool bAltPause = 0;
+int bAltPause = 0;
 
 int bAlwaysDrawFrames = 0;
 

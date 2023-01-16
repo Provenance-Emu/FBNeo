@@ -12,7 +12,7 @@
 #include <stdint.h>
 
 #ifndef __APPLE__
-#include <malloc.h>
+#include <malloc/malloc.h>
 #endif
 
 #ifdef __cplusplus

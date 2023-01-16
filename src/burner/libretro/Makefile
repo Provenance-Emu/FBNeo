@@ -27,32 +27,33 @@ BACKSLASH := \$(BACKSLASH)
 filter_out1 = $(filter-out $(firstword $1),$1)
 filter_out2 = $(call filter_out1,$(call filter_out1,$1))
 
+platform = ios-arm64
 # system platform
-ifeq ($(platform),)
-	platform = unix
-	ifeq ($(shell uname -a),)
-		platform = win
-		EXE_EXT=.exe
-	else ifneq ($(findstring Darwin,$(shell uname -a)),)
-		platform = osx
-		arch = intel
-		ifeq ($(shell uname -p),arm)
-			arch = arm
-		endif
-		ifeq ($(shell uname -p),powerpc)
-			arch = ppc
-		endif
-	else ifneq ($(findstring MINGW,$(shell uname -a)),)
-		platform = win
-		EXE_EXT=.exe
-	endif
-else ifneq (,$(findstring armv,$(platform)))
-	ifeq (,$(findstring classic_,$(platform)))
-		override platform += unix
-	endif
-else ifneq (,$(findstring rpi,$(platform)))
-	override platform += unix
-endif
+# ifeq ($(platform),)
+# 	platform = unix
+# 	ifeq ($(shell uname -a),)
+# 		platform = win
+# 		EXE_EXT=.exe
+# 	else ifneq ($(findstring Darwin,$(shell uname -a)),)
+# 		platform = osx
+# 		arch = intel
+# 		ifeq ($(shell uname -p),arm)
+# 			arch = arm
+# 		endif
+# 		ifeq ($(shell uname -p),powerpc)
+# 			arch = ppc
+# 		endif
+# 	else ifneq ($(findstring MINGW,$(shell uname -a)),)
+# 		platform = win
+# 		EXE_EXT=.exe
+# 	endif
+# else ifneq (,$(findstring armv,$(platform)))
+# 	ifeq (,$(findstring classic_,$(platform)))
+# 		override platform += unix
+# 	endif
+# else ifneq (,$(findstring rpi,$(platform)))
+# 	override platform += unix
+# endif
 
 MAIN_FBNEO_DIR	:= ../..
 VERSION_SCRIPT	:= $(MAIN_FBNEO_DIR)/burner/libretro/link.T

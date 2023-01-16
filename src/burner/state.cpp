@@ -1,5 +1,6 @@
 // Driver Save State module
 #include "burner.h"
+#include "burn.h"
 
 // from dynhuff.cpp
 INT32 FreezeDecode(UINT8 **buffer, INT32 *size);
@@ -141,7 +142,7 @@ INT32 BurnStateLoadEmbed(FILE* fp, INT32 nOffset, INT32 bAll, INT32 (*pLoadGame)
 				if (nCurrentGame != nBurnDrvActive) {
 					INT32 nOldActive = nBurnDrvActive;  // Exit current game if loading a state from another game
 					nBurnDrvActive = nCurrentGame;
-					DrvExit();
+//					DrvExit();
 					nBurnDrvActive = nOldActive;
 				}
 				if (pLoadGame == NULL) {

@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -21,3 +21,7 @@ nvram
 *.nvr
 config/*
 fbneo.dat
+*.o
+/src/burner/libretro/ctvmake
+/src/burner/libretro/m68kmake
+/src/burner/libretro/pgmspritecreate

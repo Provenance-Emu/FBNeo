@@ -1,4 +1,4 @@
-
+#pragma once
 struct giConstant {
 	UINT8 nConst;				// The constant value
 };

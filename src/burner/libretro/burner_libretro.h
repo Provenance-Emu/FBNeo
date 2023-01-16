@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _BURNER_LIBRETRO_H
 #define _BURNER_LIBRETRO_H
 

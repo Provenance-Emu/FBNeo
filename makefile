@@ -22,7 +22,7 @@ UNICODE = 1
 #BUILD_A68K = 1
 
 # Include x86 Assembly routines
-BUILD_X86_ASM = 1
+BUILD_X86_ASM = 0
 
 # Include GCC optmisations for your CPU e.g use -march=native. WARNING: This might mean that the generated binaries will not run on other peoples (older) machines!
 #BUILD_NATIVE = 1
@@ -37,7 +37,7 @@ BUILD_X86_ASM = 1
 INCLUDE_7Z_SUPPORT = 1
 
 # Include AVI recording support (uses Video For Windows)
-INCLUDE_AVI_RECORDING = 1
+INCLUDE_AVI_RECORDING = 0
 
 # Include LUA support (on Windows Standalone, LUA is enabled regardless)
 #INCLUDE_LUA_SUPPORT = 1
@@ -46,9 +46,9 @@ INCLUDE_AVI_RECORDING = 1
 #SYMBOL = 1
 
 # Include features for debugging drivers unless we are doing a release build
-ifndef RELEASEBUILD
-DEBUG	= 1
-endif
+#ifndef RELEASEBUILD
+#DEBUG	= 1
+#endif
 
 # Include rom set verifying features (comment this for release builds)
 #ROM_VERIFY = 1
@@ -113,5 +113,8 @@ vc: FORCE
 
 pi: FORCE
 	@$(MAKE) -s -f makefile.pi
+
+ios: FORCE
+	@$(MAKE) -s -f makefile.ios
 
 FORCE:

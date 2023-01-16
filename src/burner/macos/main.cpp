@@ -1,7 +1,12 @@
 #include "burner.h"
 #include "main.h"
 
+#include <TargetConditionals.h>
+
+#if TARGET_OS_OSX
 #include <Carbon/Carbon.h>
+#else
+#endif
 
 extern int RunIdle();
 extern int RunInit();
@@ -97,6 +102,7 @@ int MainEnd()
 }
 
 #pragma mark - SDL substitutes
+#if TARGET_OS_OSX
 
 unsigned int SDL_GetTicks()
 {
@@ -114,3 +120,4 @@ void SDL_Delay(unsigned int ms)
         now = SDL_GetTicks();
     } while (stop > now);
 }
+#endif

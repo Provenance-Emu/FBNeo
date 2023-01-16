@@ -27,7 +27,7 @@
 #include <wiiu/os/condition.h>
 #include <wiiu/os/thread.h>
 #include <wiiu/os/mutex.h>
-#include <malloc.h>
+#include <malloc/malloc.h>
 #define STACKSIZE (8 * 1024)
 
 typedef OSThread* pthread_t;
